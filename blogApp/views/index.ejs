@@ -1,0 +1,17 @@
+<% include ./partials/header.ejs %>
+
+
+<% blogs.forEach(function(data){ %>
+    <div class="ui main segment text container" id="front">
+        <h1><%= data.title %></h1>
+        <div class="image">
+            <img src="<%= data.image %>">
+        </div>
+        <p><%- data.body.substring(0, 100)%>...</p>
+        <p>Created: <%= data.created %></p>
+        <button><a href="blogs/<%= data._id %>">Read More</a></button>
+    </div>
+<% }) %>
+
+
+<% include ./partials/footer.ejs %>
